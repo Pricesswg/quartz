@@ -8,32 +8,27 @@ tags:
   - homeassistant
 ---
 
-Benvenuto nei miei **appunti tecnici pubblici**.
+Benvenuto nei miei appunti tecnici pubblici.
 
-Qui raccolgo guide pratiche, appunti di lavoro e documentazione che uso ogni giorno — gli stessi che accompagnano i video del canale.
+Qui raccolgo guide pratiche, appunti di lavoro e documentazione che uso ogni giorno — gli stessi che accompagnano i video del canale. Non sono guide scritte per fare scena: sono quello che mi serve davvero sul campo.
 
 ---
 
-## 📘 Domotica
+## Domotica
 
 Appunti su Home Assistant, reti domestiche, MQTT, Zigbee, Matter e automazione avanzata.
 
-👉 [[DOMOTICA/index|Vai alla sezione Domotica]]
+[[DOMOTICA/index|Vai alla sezione Domotica]]
 
 ---
 
-## 🔧 Progetti DIY
+## Progetti DIY
 
 Progetti reali e testati: ESP32, server casalinghi, NAS, e molto altro.
 
-👉 [[PROGETTI DIY/index|Vai alla sezione Progetti DIY]]
+[[PROGETTI DIY/index|Vai alla sezione Progetti DIY]]
 
 ---
 
-## 🧠 Come usare questi appunti
-
-- Ogni sezione ha un indice con tutti gli articoli
-- I contenuti crescono nel tempo seguendo i video del canale
-- Se qualcosa cambia, qui trovi sempre la versione aggiornata
-
-> ⚠️ Alcuni contenuti sono l'estensione scritta dei video YouTube.
+> [!note]
+> Alcuni contenuti sono l'estensione scritta dei video YouTube. Se hai guardato il video, qui trovi i dettagli che non ci stavano dentro.

@@ -6,17 +6,16 @@ tags:
   - homeassistant
   - mqtt
   - zigbee
+argomento: domotica
 ---
 
-# Domotica
-
-Tutti gli appunti sulla domotica: dal corso introduttivo ai protocolli avanzati.
+Tutti gli appunti sulla domotica, dal corso introduttivo ai protocolli di comunicazione.
 
 ---
 
-## 📖 Corso Home Assistant
+## Corso Home Assistant
 
-Guida step-by-step per iniziare con Home Assistant.
+Guida step-by-step per iniziare con Home Assistant, pensata per chi parte da zero.
 
 - [[CORSO HOME ASSISTANT/1 Cos'è la Domotica|1 · Cos'è la Domotica]]
 - [[CORSO HOME ASSISTANT/2 Concetti fondamentali|2 · Concetti fondamentali]]
@@ -25,12 +24,12 @@ Guida step-by-step per iniziare con Home Assistant.
 
 ---
 
-## 🌐 Gestione di Rete
+## Gestione di rete
 
-- [[GESTIONE DI RETE/Indirizzi IP e differenze tra IPv4 e IPv6|Indirizzi IP e IPv4 vs IPv6]]
+- [[GESTIONE DI RETE/Indirizzi IP e differenze tra IPv4 e IPv6|Indirizzi IP e differenze tra IPv4 e IPv6]]
 - [[GESTIONE DI RETE/MAC Address|MAC Address]]
 - [[GESTIONE DI RETE/DHCP|DHCP]]
-- [[GESTIONE DI RETE/Bloccare gli indirizzi dei dispositivi sulla rete|Bloccare indirizzi dispositivi]]
+- [[GESTIONE DI RETE/Bloccare gli indirizzi dei dispositivi sulla rete|Bloccare gli indirizzi dei dispositivi sulla rete]]
 - [[GESTIONE DI RETE/Container|Container]]
 - [[GESTIONE DI RETE/Virtual Machine|Virtual Machine]]
 - [[GESTIONE DI RETE/NFS|NFS]]
@@ -38,7 +37,7 @@ Guida step-by-step per iniziare con Home Assistant.
 
 ---
 
-## 📡 Protocolli di Comunicazione
+## Protocolli di comunicazione
 
 - [[PROTOCOLLI DI COMUNICAZIONE/Zigbee|Zigbee]]
 - [[PROTOCOLLI DI COMUNICAZIONE/Matter|Matter]]
