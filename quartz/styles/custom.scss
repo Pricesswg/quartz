@@ -2,17 +2,19 @@
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Custom theme — allineato ad alessandrosimonitto.it
-// Dark-only, accent giallo (#FFAA00), tipografia Bungee + Space Grotesk.
-// Le foto degli appunti restano native: nessun filter su <img>.
+// Dark-only, accent giallo (#FFAA00).
+// Tipografia: Space Grotesk (header + display in 700 uppercase tracked),
+// Source Sans Pro (body), JetBrains Mono (code).
+// Bungee originale è incompatibile con il loader SCSS di Quartz (no @import url),
+// quindi uso Space Grotesk 700 uppercase tracked per nav/footer/etichette:
+// risultato visivo "tech tracked" coerente con il sito principale.
+//
+// IMPORTANTE: nessun filter su <img>, le foto degli appunti restano native.
 // ─────────────────────────────────────────────────────────────────────────────
 
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+$displayFont: var(--headerFont);
 
-// Font display per logo / nav / footer (uppercase tracked)
-$displayFont: "Bungee", sans-serif;
-
-// Forza color-scheme dark indipendentemente dal valore di saved-theme,
-// così chi ha "light" salvato vede comunque il sito coerente.
+// Forza color-scheme dark indipendentemente dal valore di saved-theme.
 :root,
 :root[saved-theme="light"],
 :root[saved-theme="dark"] {
@@ -22,8 +24,9 @@ $displayFont: "Bungee", sans-serif;
 // ─── Logo / Page title ──────────────────────────────────────────────────────
 .page-title {
   font-family: $displayFont;
+  font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--dark);
   margin: 0;
@@ -35,40 +38,38 @@ $displayFont: "Bungee", sans-serif;
 }
 
 // ─── Sidebar links / explorer ───────────────────────────────────────────────
-.explorer {
-  & button#explorer {
-    font-family: $displayFont;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--darkgray);
+.explorer button#explorer {
+  font-family: $displayFont;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--darkgray);
 
-    &:hover {
-      color: var(--secondary);
-    }
-  }
-
-  & ul.overflow li > a {
-    transition: color 0.15s ease;
-    &:hover {
-      color: var(--secondary);
-    }
+  &:hover {
+    color: var(--secondary);
   }
 }
 
-// ─── Search input ───────────────────────────────────────────────────────────
-.search {
-  & button {
-    font-family: $displayFont;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: transparent;
-    color: var(--darkgray);
+.explorer ul.overflow li > a {
+  transition: color 0.15s ease;
+  &:hover {
+    color: var(--secondary);
+  }
+}
 
-    &:hover {
-      color: var(--secondary);
-    }
+// ─── Search ─────────────────────────────────────────────────────────────────
+.search button {
+  font-family: $displayFont;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--darkgray);
+
+  &:hover {
+    color: var(--secondary);
   }
 }
 
@@ -79,18 +80,20 @@ $displayFont: "Bungee", sans-serif;
   letter-spacing: -0.01em;
 }
 
-// ─── Tag list / tag links ───────────────────────────────────────────────────
-.tags > li > a.tag-link,
+// ─── Tag links ──────────────────────────────────────────────────────────────
 a.internal.tag-link {
   font-family: $displayFont;
+  font-weight: 700;
   font-size: 0.65rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   background-color: transparent;
   border: 1px solid var(--lightgray);
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.45rem;
   color: var(--darkgray);
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
 
   &:hover {
     border-color: var(--secondary);
@@ -98,17 +101,17 @@ a.internal.tag-link {
   }
 }
 
-// ─── Backlinks / TOC headers ────────────────────────────────────────────────
+// ─── Sidebar headers (backlinks/toc/graph/recent) ───────────────────────────
 .backlinks > h3,
 .toc > h3,
 .graph > h3,
 .recent-notes > h3 {
   font-family: $displayFont;
+  font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--darkgray);
-  font-weight: normal;
 }
 
 // ─── Breadcrumbs ────────────────────────────────────────────────────────────
@@ -136,6 +139,7 @@ footer {
   & p,
   & ul li {
     font-family: $displayFont;
+    font-weight: 700;
     font-size: 0.65rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -150,7 +154,7 @@ footer {
   }
 }
 
-// ─── Bordi e separatori più sottili (stile sito principale) ─────────────────
+// ─── Bordi e separatori ─────────────────────────────────────────────────────
 hr {
   background-color: var(--lightgray);
 }
@@ -159,7 +163,7 @@ blockquote {
   border-left-color: var(--secondary);
 }
 
-// ─── Code blocks: bordo sottile, sfondo leggermente più chiaro ──────────────
+// ─── Code blocks: bordo sottile, sfondo scuro ───────────────────────────────
 pre {
   background-color: #111111;
   border-color: var(--lightgray);
@@ -176,10 +180,8 @@ code {
   color: #0d0d0d;
 }
 
-// ─── Foto degli appunti: nessun filtro, mai. ────────────────────────────────
+// ─── Foto degli appunti: nessun filtro CSS, mai. ────────────────────────────
 // Le immagini sono allegati Obsidian che devono restare leggibili 1:1.
-// Se in futuro aggiungi effetti decorativi (dithering, grayscale, ecc.)
-// applicali solo a classi esplicite, mai al selettore generico `img`.
 img {
   filter: none;
 }
