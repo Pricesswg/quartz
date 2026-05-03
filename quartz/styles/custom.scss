@@ -1,3 +1,185 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─────────────────────────────────────────────────────────────────────────────
+// Custom theme — allineato ad alessandrosimonitto.it
+// Dark-only, accent giallo (#FFAA00), tipografia Bungee + Space Grotesk.
+// Le foto degli appunti restano native: nessun filter su <img>.
+// ─────────────────────────────────────────────────────────────────────────────
+
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+// Font display per logo / nav / footer (uppercase tracked)
+$displayFont: "Bungee", sans-serif;
+
+// Forza color-scheme dark indipendentemente dal valore di saved-theme,
+// così chi ha "light" salvato vede comunque il sito coerente.
+:root,
+:root[saved-theme="light"],
+:root[saved-theme="dark"] {
+  color-scheme: dark;
+}
+
+// ─── Logo / Page title ──────────────────────────────────────────────────────
+.page-title {
+  font-family: $displayFont;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin: 0;
+
+  & a {
+    color: var(--dark);
+    background: none;
+  }
+}
+
+// ─── Sidebar links / explorer ───────────────────────────────────────────────
+.explorer {
+  & button#explorer {
+    font-family: $displayFont;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--darkgray);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  & ul.overflow li > a {
+    transition: color 0.15s ease;
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// ─── Search input ───────────────────────────────────────────────────────────
+.search {
+  & button {
+    font-family: $displayFont;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--darkgray);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// ─── Article title ──────────────────────────────────────────────────────────
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+// ─── Tag list / tag links ───────────────────────────────────────────────────
+.tags > li > a.tag-link,
+a.internal.tag-link {
+  font-family: $displayFont;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--lightgray);
+  padding: 0.15rem 0.4rem;
+  color: var(--darkgray);
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+}
+
+// ─── Backlinks / TOC headers ────────────────────────────────────────────────
+.backlinks > h3,
+.toc > h3,
+.graph > h3,
+.recent-notes > h3 {
+  font-family: $displayFont;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--darkgray);
+  font-weight: normal;
+}
+
+// ─── Breadcrumbs ────────────────────────────────────────────────────────────
+.breadcrumb-container {
+  font-family: var(--codeFont);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+
+  & a {
+    color: var(--gray);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// ─── Footer ─────────────────────────────────────────────────────────────────
+footer {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+
+  & p,
+  & ul li {
+    font-family: $displayFont;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  & a {
+    color: var(--gray);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// ─── Bordi e separatori più sottili (stile sito principale) ─────────────────
+hr {
+  background-color: var(--lightgray);
+}
+
+blockquote {
+  border-left-color: var(--secondary);
+}
+
+// ─── Code blocks: bordo sottile, sfondo leggermente più chiaro ──────────────
+pre {
+  background-color: #111111;
+  border-color: var(--lightgray);
+}
+
+code {
+  background-color: #1c1c1c;
+  color: var(--secondary);
+}
+
+// ─── Selezione testo ────────────────────────────────────────────────────────
+::selection {
+  background: var(--secondary);
+  color: #0d0d0d;
+}
+
+// ─── Foto degli appunti: nessun filtro, mai. ────────────────────────────────
+// Le immagini sono allegati Obsidian che devono restare leggibili 1:1.
+// Se in futuro aggiungi effetti decorativi (dithering, grayscale, ecc.)
+// applicali solo a classi esplicite, mai al selettore generico `img`.
+img {
+  filter: none;
+}
