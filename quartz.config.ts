@@ -27,30 +27,32 @@ const config: QuartzConfig = {
         body: "Source Sans Pro",
         code: "JetBrains Mono",
       },
-      // Palette allineata ad alessandrosimonitto.it: dark-only, accent giallo.
+      // Palette allineata ad alessandrosimonitto.it (token in src/styles/global.css, nov 2026):
+      // carbone #10110F, testo crema #ECE7DF, grigio #A4A19B, accento arancione #EB6C37
+      // (hover #F3824F), giallo #FFC200 solo come segnale (evidenziazioni, focus).
       // Light e dark sono uguali per garantire coerenza anche se l'utente ha "light" salvato.
       colors: {
         lightMode: {
-          light: "#0d0d0d",
-          lightgray: "#1c1c1c",
-          gray: "#777777",
-          darkgray: "#cccccc",
-          dark: "#ffffff",
-          secondary: "#FFAA00",
-          tertiary: "#FFC340",
-          highlight: "rgba(255, 170, 0, 0.12)",
-          textHighlight: "rgba(255, 170, 0, 0.30)",
+          light: "#10110F",
+          lightgray: "#2A2B26",
+          gray: "#A4A19B",
+          darkgray: "#ECE7DF",
+          dark: "#ECE7DF",
+          secondary: "#EB6C37",
+          tertiary: "#F3824F",
+          highlight: "rgba(235, 108, 55, 0.12)",
+          textHighlight: "rgba(255, 194, 0, 0.30)",
         },
         darkMode: {
-          light: "#0d0d0d",
-          lightgray: "#1c1c1c",
-          gray: "#777777",
-          darkgray: "#cccccc",
-          dark: "#ffffff",
-          secondary: "#FFAA00",
-          tertiary: "#FFC340",
-          highlight: "rgba(255, 170, 0, 0.12)",
-          textHighlight: "rgba(255, 170, 0, 0.30)",
+          light: "#10110F",
+          lightgray: "#2A2B26",
+          gray: "#A4A19B",
+          darkgray: "#ECE7DF",
+          dark: "#ECE7DF",
+          secondary: "#EB6C37",
+          tertiary: "#F3824F",
+          highlight: "rgba(235, 108, 55, 0.12)",
+          textHighlight: "rgba(255, 194, 0, 0.30)",
         },
       },
     },
@@ -62,8 +64,10 @@ const config: QuartzConfig = {
         priority: ["frontmatter", "git", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
+        // Il sito è dark-only anche con saved-theme="light" (OS in modalità chiara):
+        // con github-light i blocchi di codice diventano illeggibili sullo sfondo carbone.
         theme: {
-          light: "github-light",
+          light: "github-dark",
           dark: "github-dark",
         },
         keepBackground: false,
