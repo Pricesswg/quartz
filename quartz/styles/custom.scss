@@ -2,7 +2,8 @@
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Custom theme — allineato ad alessandrosimonitto.it
-// Dark-only, accent giallo (#FFAA00).
+// Dark-only, accento arancione (#EB6C37), giallo (#FFC200) solo come segnale
+// (evidenziazioni e focus). Palette in quartz.config.ts.
 // Tipografia: Space Grotesk (header + display in 700 uppercase tracked),
 // Source Sans Pro (body), JetBrains Mono (code).
 // Bungee originale è incompatibile con il loader SCSS di Quartz (no @import url),
@@ -164,20 +165,27 @@ blockquote {
 }
 
 // ─── Code blocks: bordo sottile, sfondo scuro ───────────────────────────────
+// #1D1E1A è il colore "card" del sito (pannelli, campi).
 pre {
-  background-color: #111111;
+  background-color: #1d1e1a;
   border-color: var(--lightgray);
 }
 
 code {
-  background-color: #1c1c1c;
+  background-color: #1d1e1a;
   color: var(--secondary);
 }
 
 // ─── Selezione testo ────────────────────────────────────────────────────────
 ::selection {
   background: var(--secondary);
-  color: #0d0d0d;
+  color: var(--light);
+}
+
+// ─── Focus da tastiera: giallo segnale, come sul sito ──────────────────────
+:focus-visible {
+  outline: 2px solid #ffc200;
+  outline-offset: 2px;
 }
 
 // ─── Foto degli appunti: nessun filtro CSS, mai. ────────────────────────────
